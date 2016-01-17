@@ -1,5 +1,5 @@
 # RPG-test
-Un test pour un rpg tour a tour
+Un test d'un rpg tour par tour.
 
 
 
