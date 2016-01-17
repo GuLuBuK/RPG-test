@@ -1,0 +1,51 @@
+<script>
+
+// PV veut dire Points de Vie
+var PV = 12;
+
+function attaque() {
+	
+    if(PV <= 0){
+        alert("Le monstre est mort ! :-)");
+    }
+    else {
+    	var degats = getRandomMinMax (2, 4);
+        PV = PV-degats;
+        if (PV > 0) {
+        	alert("Le monstre a perdu "+degats+" PV. Il lui en reste "+PV);
+        }
+    }
+}
+
+function soigne() {
+	
+    if(PV <= 0){
+        alert("Le monstre est déjà mort ! On ne peut pas le soigner !")
+    }
+	else if(PV >= 12){
+        alert("Le monstre a ses points de vie déjà au maximum.");
+    }
+    else {
+       	var soins = getRandomMinMax (1, 3);
+        PV = PV+soins;
+        if(PV > 12){
+        	PV = 12;
+       	}
+        
+        if(PV > 0){       
+        	alert("Le monstre a gagné "+soins+" PV. Il en a maintenant "+PV);
+       	}
+    }
+}
+
+function getRandomMinMax (min, max){
+	return Math.floor (Math.random()*(max-min)) +min
+}
+
+
+
+
+
+</script>
+<button onclick="attaque()">Attaque</button>
+<button onclick="soigne()">Soigne</button>
